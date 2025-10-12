@@ -26,7 +26,7 @@ export default function Card(props) {
             }
             else if (food.size !== size) {
                 await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, qty: qty, size: size, img: props.img })
-                // await console.log(data);
+                
                 return
             }
              await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, qty: qty, size: size, img: props.img })

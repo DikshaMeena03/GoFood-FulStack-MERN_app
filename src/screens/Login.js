@@ -1,42 +1,46 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export default function Login() {
-   const [credentials, setcredentials] = useState({ email:"", password:""})
-   let navigate = useNavigate() 
-    const handleSubmit = async(e) => {
+    
+    // const { loginWithRedirect } = useAuth0();
+    
+    const [credentials, setcredentials] = useState({ email: "", password: "" })
+    let navigate = useNavigate()
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/loginuser",{
-            method:'POST',
-            headers:{
+        const response = await fetch("http://localhost:5000/api/loginuser", {
+            method: 'POST',
+            headers: {
                 'Content-Type': 'application/json'
             },
-            body:JSON.stringify({ email:credentials.email, password:credentials.password})
+            body: JSON.stringify({ email: credentials.email, password: credentials.password })
         });
         const json = await response.json()
         console.log(json);
 
-        if(!json.success){
+        if (!json.success) {
             alert("Enter valid credentials")
         }
-        if(json.success){
-            localStorage.setItem("userEmail",credentials.email)
-            localStorage.setItem("authToken",json.authToken)
+        if (json.success) {
+            localStorage.setItem("userEmail", credentials.email)
+            localStorage.setItem("authToken", json.authToken)
             console.log(localStorage.getItem("authtoken"))
             navigate("/");
         }
     }
-    const onChange=(event) =>{
-        setcredentials({...credentials, [event.target.name]: event.target.value})
+    const onChange = (event) => {
+        setcredentials({ ...credentials, [event.target.name]: event.target.value })
     }
 
-  return (
-    <>
+    return (
+        <>
 
-     <div className='container'>
+            <div className='container'>
 
                 <form onSubmit={handleSubmit}>
-                  
+
                     <div className="mb-3 mt-3 ml-4 mr-4">
                         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                         <input type="email" className="form-control" name='email' value={credentials.email} onChange={onChange} />
@@ -44,14 +48,18 @@ export default function Login() {
                     </div>
                     <div className="mb-3">
                         <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                        <input type="password" className="form-control" name='password' value={credentials.password}  onChange={onChange}/>
+                        <input type="password" className="form-control" name='password' value={credentials.password} onChange={onChange} />
                     </div>
-                  
 
-                    <button type="submit" className=" m-3 btn btn-success">Submit</button>
+
+                    <button  to="/"  type="submit" className=" m-3 btn btn-success">Submit</button>
                     <Link to="/createuser" className="m-3 btn btn-success">New User </Link>
+                    {/* <button onClick={() => loginWithRedirect()} className=" m-3 btn btn-success" >LogIn with Google</button> */}
                 </form>
+
             </div>
-    </>
-  )
+        </>
+    )
 }
+
+

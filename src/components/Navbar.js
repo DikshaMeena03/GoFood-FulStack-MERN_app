@@ -7,6 +7,9 @@ import Cart from '../screens/Cart';
 import modal from '../Model';
 import { useCart } from './ContextReducer';
 
+
+
+
 export default function Navbar(props) {
     const [cartView, setCartview] = useState(false);
     const navigate = useNavigate();
@@ -23,14 +26,19 @@ export default function Navbar(props) {
                     <Link className="navbar-brand fs-1 fst-Cursive " to="/">
                         <a href='#' className='navlogo'>
 
-                        </a>    GOFood</Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        </a>GOFood</Link>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav me-auto mb-2">
                             <li className="nav-item ">
                                 <Link className="nav-link active fs-5" aria-current="page" to="/">Home</Link>
+
+                            </li>
+                             <li className="nav-item ">
+                                <Link className="nav-link active fs-5" aria-current="page" to="/"></Link>
+                                
                             </li>
                             {(localStorage.getItem("authToken")) ?
                                 <li className="nav-item ">
