@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import badge from 'react-bootstrap/badge'
-import Badge from 'react-bootstrap/badge';
+import Badge from 'react-bootstrap/Badge';
 import Modal from 'react-bootstrap/Modal';
 import Cart from '../screens/Cart';
 import modal from '../Model';
