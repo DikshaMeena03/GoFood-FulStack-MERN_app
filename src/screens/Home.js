@@ -11,7 +11,7 @@ export default function Home() {
 
     const loadData = async () => {
         try {
-            let response = await fetch("http://localhost:5000/api/data", {
+            let response = await fetch("https://gofood-fulstack-mern-app.onrender.com/api/data", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
