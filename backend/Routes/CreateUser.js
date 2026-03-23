@@ -8,7 +8,7 @@ const jwtSecret = process.env.JWT_SECRET;
 const bcrypt = require("bcryptjs")
 
 
-router.post('/createuser',
+router.post("/createuser",
     body('email', 'invalid email').isEmail(),
     body('name').isLength({ min: 4 }),
     body('password', 'invalid password').isLength({ min: 3 }),
