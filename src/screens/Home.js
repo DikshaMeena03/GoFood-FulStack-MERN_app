@@ -11,16 +11,15 @@ export default function Home() {
 
     const loadData = async () => {
         try {
-            let response = await fetch("https://gofood-fulstack-mern-app.onrender.com/api/data", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-            response = await response.json();
-            // console.log(response.food_items, response.foodCategory);
-            setfoodItem(response.food_items);
-            setfoodCat(response.foodCategory);
+            let response = await fetch("https://gofood-fulstack-mern-app.onrender.com/api/data");
+
+            let data = await response.json();
+
+            console.log("API DATA:", data); // debug
+
+            setfoodItem(data.food_items || []);
+            setfoodCat(data.foodCategory || []);
+
         } catch (error) {
             console.error("Failed to load data:", error);
         }
