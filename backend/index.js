@@ -7,7 +7,7 @@ const mongoDB = require("./db");
 mongoDB();
 
 app.use((req, res, next) =>{
-  res.setHeader("Access-Control-Allow-Origin","https://gofood-fulstack-mern-app.onrender.com");
+  res.setHeader("Access-Control-Allow-Origin","https://go-food-ful-stack-mern-app.vercel.app/");
   res.header("Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
