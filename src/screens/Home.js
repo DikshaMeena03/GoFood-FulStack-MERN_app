@@ -17,9 +17,14 @@ export default function Home() {
 
             console.log("API DATA:", data); // debug
 
+            if (Array.isArray(data)) {
+            setfoodItem(data[0] || []);
+            setfoodCat(data[1] || []);
+            } 
+            else {
             setfoodItem(data.food_items || []);
             setfoodCat(data.foodCategory || []);
-
+            }
         } catch (error) {
             console.error("Failed to load data:", error);
         }

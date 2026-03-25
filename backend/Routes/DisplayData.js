@@ -8,7 +8,7 @@ router.get('/data', async (req, res) => {
     const db = mongoose.connection.db;
     const food_items = await db.collection('food_items').find({}).toArray();
     const foodCategory = await db.collection('foodCategory').find({}).toArray();
-    res.send({ food_items, foodCategory });
+    res.json({ food_items, foodCategory });
   } catch (error) {
     console.error(error.message);
     res.status(500).send('Server error');
