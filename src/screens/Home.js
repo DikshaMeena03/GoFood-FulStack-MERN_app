@@ -16,15 +16,9 @@ export default function Home() {
             let data = await response.json();
 
             console.log("API DATA:", data); // debug
-
-            if (Array.isArray(data)) {
-            setfoodItem(data[0] || []);
-            setfoodCat(data[1] || []);
-            } 
-            else {
+             
             setfoodItem(data.food_items || []);
             setfoodCat(data.foodCategory || []);
-            }
         } catch (error) {
             console.error("Failed to load data:", error);
         }
@@ -43,7 +37,7 @@ export default function Home() {
                 <div className="carousel-inner" id='carousel'>
                     <div className='carousel-caption' style={{ zIndex: "10" }}>
                         <div className="d-flex justify-content-centre " >
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e)=> {setsearch(e.target.value)}} />
+                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e) => { setsearch(e.target.value) }} />
                             <button className="btn btn-outline-success text-white bg-success" type="submit">Search</button>
                         </div>
 
@@ -87,17 +81,21 @@ export default function Home() {
                                 Array.isArray(foodItem) && foodItem.length > 0
                                     // foodItem !== []
                                     ?
-                                    foodItem.filter((item) => (item.CategoryName === data.CategoryName) &&  (item.name.toLowerCase().includes(search.toLocaleLowerCase()) )   )
+                                    foodItem
+                                        .filter((item) =>
+                                            item.CategoryName?.trim().toLowerCase() === data.CategoryName?.trim().toLowerCase() &&
+                                            item.name.toLowerCase().includes(search.toLowerCase())
+                                        )
                                         .map(filterItems => {
                                             return (
                                                 <div key={filterItems._id} className='col-12 col-md-6 col-lg-4'>
-                                                    <Card 
-                                                       foodname={filterItems.name}
-                                                       foodItem ={filterItems}
+                                                    <Card
+                                                        foodname={filterItems.name}
+                                                        foodItem={filterItems}
                                                         options={filterItems.options[0]}
                                                         img={filterItems.img}
-                                                        
-                                                   > </Card>
+
+                                                    > </Card>
                                                 </div>
 
                                             )
