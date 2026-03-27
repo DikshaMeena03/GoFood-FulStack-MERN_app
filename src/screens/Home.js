@@ -16,9 +16,14 @@ export default function Home() {
             let data = await response.json();
 
             console.log("API DATA:", data); // debug
-             
-            setfoodItem(data.food_items || []);
-            setfoodCat(data.foodCategory || []);
+
+            if (Array.isArray(data)) {
+                setfoodItem(data[0] || []);
+                setfoodCat(data[1] || []);
+            } else {
+                setfoodItem(data.food_items || []);
+                setfoodCat(data.foodCategory || []);
+            }
         } catch (error) {
             console.error("Failed to load data:", error);
         }
@@ -36,7 +41,7 @@ export default function Home() {
             <div> <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel" style={{ objectFit: "contain !important" }}  >
                 <div className="carousel-inner" id='carousel'>
                     <div className='carousel-caption' style={{ zIndex: "10" }}>
-                        <div className="d-flex justify-content-centre " >
+                        <div className="d-flex justify-content-centre" >
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e) => { setsearch(e.target.value) }} />
                             <button className="btn btn-outline-success text-white bg-success" type="submit">Search</button>
                         </div>
@@ -73,7 +78,7 @@ export default function Home() {
                 {
                     Array.isArray(foodCat) && foodCat.length > 0
                         ? foodCat.map((data, idx) =>
-                        (<div className='row mb-3'>
+                        (<div className='row mb-3' key={idx}>
                             <div key={data._id} className='fs-3 m-3'>
                                 {data.CategoryName}
                             </div>
@@ -103,7 +108,7 @@ export default function Home() {
 
                             <hr />
                         </div>
-                        )) : ""
+                        )) : <div className="text-center mt-5">No Data Found</div>
                 }
             </div>
 
