@@ -14,7 +14,7 @@ mongoDB();
 app.use(cors({
   origin: [
     "http://localhost:3000", // local frontend
-    "https://go-food-ful-stack-mern-app.vercel.app/" // your Vercel frontend (UPDATE if different)
+    "https://go-food-ful-stack-mern-app.vercel.app" // your Vercel frontend (UPDATE if different)
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type"],
