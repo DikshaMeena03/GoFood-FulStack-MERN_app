@@ -5,10 +5,10 @@ import {
   Smartphone,
   Truck,
   Check,
-  Instagram,
-  Twitter,
-  Facebook,
   MapPin,
+  Instagram as InstagramIcon,
+  Twitter as TwitterIcon,
+  Facebook as FacebookIcon,
 } from "lucide-react";
 
 const AboutUs = () => {
@@ -190,9 +190,9 @@ const AboutUs = () => {
           <h2 className="text-3xl font-bold mb-6">GET IN TOUCH</h2>
 
           <div className="flex justify-center gap-6 mb-6">
-            <Instagram />
-            <Twitter />
-            <Facebook />
+            <InstagramIcon />
+            <TwitterIcon />
+            <FacebookIcon />
           </div>
 
           <div className="space-y-2">
