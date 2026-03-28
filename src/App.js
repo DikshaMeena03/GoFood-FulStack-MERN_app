@@ -13,6 +13,7 @@ import SignUp from './screens/SignUp.js';
 import { CartProvider } from './components/ContextReducer.js';
 import Cart from './screens/Cart.js';
 import MyOrder from './screens/MyOrder.js';
+import AboutUs from './screens/AboutUs.js';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/createuser" element={<SignUp />} />
             <Route exact path='/cart' element={< Cart />}/>
             <Route exact path='/myOrder' element={<MyOrder />}/>
+            <Route exact path="/about" element={<AboutUs />} />
           </Routes>
         </div>
       </Router>

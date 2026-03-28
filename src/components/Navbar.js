@@ -36,7 +36,7 @@ export default function Navbar(props) {
 
                             </li>
                              <li className="nav-item ">
-                                <Link className="nav-link active fs-5" aria-current="page" to="/"></Link>
+                                <Link className="nav-link active fs-5" aria-current="page" to="/">About Us</Link>
                                 
                             </li>
                             {(localStorage.getItem("authToken")) ?
