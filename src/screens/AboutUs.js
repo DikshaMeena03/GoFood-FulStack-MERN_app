@@ -8,73 +8,82 @@ import {
   MapPin,
   Share2,
   Heart,
-  Globe
+  Globe,
 } from "lucide-react";
 
 const AboutUs = () => {
   return (
-    <div className="bg-white text-gray-800">
+    <div>
 
       {/* HERO */}
-      <section className="relative h-[90vh] flex items-center justify-center text-center">
-        <img src="/hero.jpg"
-          className="absolute w-full h-full object-cover"
+      <section className="position-relative text-center text-white">
+        <img
+          src="/hero.jpg"
+          className="w-100"
+          style={{ height: "90vh", objectFit: "cover" }}
           alt=""
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
 
-        <div className="relative text-white">
-          <p className="tracking-widest text-sm">
-            OUR KITCHEN COMFORTS MEAL
-          </p>
-          <h1 className="text-5xl md:text-7xl font-bold">GO FOOD</h1>
-          <p className="mt-2 text-lg">Unleash your inner chef</p>
+        <div className="position-absolute top-50 start-50 translate-middle">
+          <p className="text-uppercase">OUR KITCHEN COMFORTS MEAL</p>
+          <h1 className="display-3 fw-bold">GO FOOD</h1>
+          <p>Unleash your inner chef</p>
         </div>
       </section>
 
       {/* ABOUT */}
-      <section className="bg-green-700 text-white py-16 px-6 md:flex gap-10 items-center">
-        <img src="/About.jpg"
-          className="rounded-xl md:w-1/2"
-          alt=""
-        />
+      <section className="bg-success text-white py-5">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-6">
+              <img src="/About.jpg" className="img-fluid rounded" alt="" />
+            </div>
 
-        <div className="md:w-1/2 mt-6 md:mt-0">
-          <h2 className="text-3xl font-bold mb-4">ABOUT</h2>
-          <p className="mb-4">
-            At Go Food, we bring delicious meals from top kitchens straight to your doorstep.
-          </p>
+            <div className="col-md-6 mt-4 mt-md-0">
+              <h2>ABOUT</h2>
+              <p>
+                At Go Food, we bring delicious meals from top kitchens straight
+                to your doorstep.
+              </p>
 
-          <ul className="space-y-3">
-            <li className="flex items-center gap-3">
-              <Leaf /> Fresh ingredients
-            </li>
-            <li className="flex items-center gap-3">
-              <Smartphone /> Easy ordering
-            </li>
-            <li className="flex items-center gap-3">
-              <Truck /> Fast delivery
-            </li>
-          </ul>
+              <ul className="list-unstyled">
+                <li className="d-flex align-items-center mb-2">
+                  <Leaf className="me-2" /> Fresh ingredients
+                </li>
+                <li className="d-flex align-items-center mb-2">
+                  <Smartphone className="me-2" /> Easy ordering
+                </li>
+                <li className="d-flex align-items-center">
+                  <Truck className="me-2" /> Fast delivery
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="relative py-20 text-center">
-        <img src="/delivery.jpg"
-          className="absolute w-full h-full object-cover"
+      <section className="position-relative text-center text-white py-5">
+        <img
+          src="/delivery.jpg"
+          className="w-100 position-absolute top-0 start-0"
+          style={{ height: "100%", objectFit: "cover" }}
           alt=""
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
 
-        <div className="relative text-white">
-          <h2 className="text-3xl font-bold mb-10">HOW IT WORKS</h2>
+        <div className="container position-relative">
+          <h2 className="mb-4">HOW IT WORKS</h2>
 
-          <div className="grid md:grid-cols-3 gap-6 px-6">
+          <div className="row">
             {["Browse", "Order & Pay", "Fast Delivery"].map((step, i) => (
-              <div key={i}>
-                <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center mx-auto mb-3">
-                  {i + 1}
+              <div className="col-md-4" key={i}>
+                <div className="mb-3">
+                  <div className="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                    style={{ width: "50px", height: "50px" }}>
+                    {i + 1}
+                  </div>
                 </div>
                 <p>{step}</p>
               </div>
@@ -84,119 +93,136 @@ const AboutUs = () => {
       </section>
 
       {/* PRICING */}
-      <section className="py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold mb-10">PRICING</h2>
+      <section className="container text-center my-5">
+        <h2 className="mb-4">PRICING</h2>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="row">
           {[
             { img: "/food1.jpg", price: "₹120" },
             { img: "/food2.jpg", price: "₹150" },
             { img: "/food3.jpg", price: "₹200" },
           ].map((item, i) => (
-            <div
-              key={i}
-              className="rounded-xl shadow-lg overflow-hidden hover:scale-105 transition"
-            >
-              <img src={item.img} className="h-56 w-full object-cover" />
-              <div className="p-4 font-semibold">{item.price}</div>
+            <div className="col-md-4 mb-4" key={i}>
+              <div className="card shadow">
+                <img
+                  src={item.img}
+                  className="card-img-top"
+                  style={{ height: "250px", objectFit: "cover" }}
+                  alt=""
+                />
+                <div className="card-body">
+                  <h5>{item.price}</h5>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       {/* WHAT'S INSIDE */}
-      <section className="py-16 px-6 md:flex gap-10 items-center">
-        <img src="/box.jpg"
-          className="rounded-xl md:w-1/2"
-          alt=""
-        />
+      <section className="container my-5">
+        <div className="row align-items-center">
+          <div className="col-md-6">
+            <img src="/box.jpg" className="img-fluid rounded" alt="" />
+          </div>
 
-        <div className="md:w-1/2 mt-6 md:mt-0">
-          <h2 className="text-3xl font-bold mb-4">
-            What's inside each box?
-          </h2>
+          <div className="col-md-6 mt-4 mt-md-0">
+            <h2>What's inside each box?</h2>
 
-          <ul className="space-y-3">
-            <li className="flex items-center gap-2">
-              <Check /> Fresh veggies
-            </li>
-            <li className="flex items-center gap-2">
-              <Check /> Ready meals
-            </li>
-            <li className="flex items-center gap-2">
-              <Check /> QR for COD
-            </li>
-            <li className="flex items-center gap-2">
-              <Check /> Guaranteed taste
-            </li>
-          </ul>
+            <ul className="list-unstyled">
+              <li className="d-flex align-items-center mb-2">
+                <Check className="me-2" /> Fresh veggies
+              </li>
+              <li className="d-flex align-items-center mb-2">
+                <Check className="me-2" /> Ready meals
+              </li>
+              <li className="d-flex align-items-center mb-2">
+                <Check className="me-2" /> QR for COD
+              </li>
+              <li className="d-flex align-items-center">
+                <Check className="me-2" /> Guaranteed taste
+              </li>
+            </ul>
 
-          <button className="mt-6 bg-green-700 text-white px-6 py-2 rounded-full">
-            Browse Food
-          </button>
+            <button className="btn btn-success mt-3">
+              Browse Food
+            </button>
+          </div>
         </div>
       </section>
 
       {/* REVIEWS */}
-      <section className="py-16 px-6 text-center bg-gray-100">
-        <h2 className="text-3xl font-bold mb-10">REVIEWS</h2>
+      <section className="bg-light py-5 text-center">
+        <div className="container">
+          <h2 className="mb-4">REVIEWS</h2>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((_, i) => (
-            <div key={i} className="p-6 bg-white shadow rounded-xl">
-              <div className="flex justify-center mb-3">
-                {[...Array(5)].map((_, j) => (
-                  <Star key={j} size={16} />
-                ))}
+          <div className="row">
+            {[1, 2, 3].map((_, i) => (
+              <div className="col-md-4 mb-3" key={i}>
+                <div className="p-4 bg-white shadow rounded">
+                  <div className="mb-2">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} size={16} />
+                    ))}
+                  </div>
+                  <p>"Amazing food and fast delivery!"</p>
+                </div>
               </div>
-              <p>"Amazing food and fast delivery!"</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* SPECIAL */}
-      <section className="py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold mb-10">
-          GO FOOD SPECIAL
-        </h2>
+      <section className="container text-center my-5">
+        <h2 className="mb-4">GO FOOD SPECIAL</h2>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="row">
           {["family.jpg", "vegan.jpg", "asian.jpg"].map((img, i) => (
-            <div key={i} className="shadow rounded-xl overflow-hidden">
-              <img src={`/${img}`} className="h-56 w-full object-cover" />
-              <button className="m-4 bg-green-700 text-white px-4 py-2 rounded-full">
-                Explore
-              </button>
+            <div className="col-md-4 mb-4" key={i}>
+              <div className="card shadow">
+                <img
+                  src={`/${img}`}
+                  className="card-img-top"
+                  style={{ height: "250px", objectFit: "cover" }}
+                  alt=""
+                />
+                <div className="card-body">
+                  <button className="btn btn-success">Explore</button>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       {/* CONTACT */}
-      <section className="relative py-20 text-center text-white">
-        <img src="/contact.jpg"
-          className="absolute w-full h-full object-cover"
+      <section className="position-relative text-center text-white py-5">
+        <img
+          src="/contact.jpg"
+          className="w-100 position-absolute top-0 start-0"
+          style={{ height: "100%", objectFit: "cover" }}
           alt=""
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
 
-        <div className="relative">
-          <h2 className="text-3xl font-bold mb-6">GET IN TOUCH</h2>
+        <div className="container position-relative">
+          <h2 className="mb-4">GET IN TOUCH</h2>
 
-          <div className="flex justify-center gap-6 mb-6">
+          <div className="d-flex justify-content-center gap-3 mb-3">
             <Share2 />
             <Heart />
             <Globe />
           </div>
 
-          <div className="space-y-2">
+          <div>
             <p><MapPin /> Delhi</p>
             <p><MapPin /> Mumbai</p>
             <p><MapPin /> Bangalore</p>
           </div>
         </div>
       </section>
+
     </div>
   );
 };
