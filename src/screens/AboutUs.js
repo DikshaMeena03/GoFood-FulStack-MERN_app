@@ -1,5 +1,5 @@
 import React from "react";
-import  aboutimg from "../public/about.jpg";
+import  aboutimg from "../about.jpg";
 import {
   Star,
   Leaf,
