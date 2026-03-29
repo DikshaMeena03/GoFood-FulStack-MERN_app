@@ -17,8 +17,7 @@ const AboutUs = () => {
 
       {/* HERO */}
       <section className="relative h-[90vh] flex items-center justify-center text-center">
-        <img
-          src="/public/hero.jpg"
+        <img src="/public/hero.jpg"
           className="absolute w-full h-full object-cover"
           alt=""
         />
@@ -35,8 +34,7 @@ const AboutUs = () => {
 
       {/* ABOUT */}
       <section className="bg-green-700 text-white py-16 px-6 md:flex gap-10 items-center">
-        <img
-          src="/public/About.jpg"
+        <img src="/public/About.jpg"
           className="rounded-xl md:w-1/2"
           alt=""
         />
@@ -63,8 +61,7 @@ const AboutUs = () => {
 
       {/* HOW IT WORKS */}
       <section className="relative py-20 text-center">
-        <img
-          src="/public/delivery.jpg"
+        <img src="/public/delivery.jpg"
           className="absolute w-full h-full object-cover"
           alt=""
         />
@@ -109,8 +106,7 @@ const AboutUs = () => {
 
       {/* WHAT'S INSIDE */}
       <section className="py-16 px-6 md:flex gap-10 items-center">
-        <img
-          src="/public/box.jpg"
+        <img src="/public/box.jpg"
           className="rounded-xl md:w-1/2"
           alt=""
         />
@@ -179,8 +175,7 @@ const AboutUs = () => {
 
       {/* CONTACT */}
       <section className="relative py-20 text-center text-white">
-        <img
-          src="/images/contact.jpg"
+        <img src="/public/contact.jpg"
           className="absolute w-full h-full object-cover"
           alt=""
         />
