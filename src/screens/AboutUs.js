@@ -1,4 +1,5 @@
 import React from "react";
+import  aboutimg from "../public/about.jpg";
 import {
   Star,
   Leaf,
@@ -37,9 +38,9 @@ const AboutUs = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <img src="/about.jpg" className="img-fluid rounded" style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }} alt="" />
+              <img src={aboutimg} className="img-fluid rounded" style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }} alt="" />
             </div>
-
+ 
             <div className="col-md-6 mt-4 mt-md-0">
               <h2>ABOUT</h2>
               <p>
@@ -123,7 +124,7 @@ const AboutUs = () => {
       <section className="container my-5">
         <div className="row align-items-center">
           <div className="col-md-6">
-            <img src="/box.jpg" className="img-fluid rounded" alt="" />
+            <img src="/box.jpg" style={{ height: "300px", objectFit: "cover", width: "100%" }} className="img-fluid rounded" alt="" />
           </div>
 
           <div className="col-md-6 mt-4 mt-md-0">
