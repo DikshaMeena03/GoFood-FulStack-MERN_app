@@ -17,7 +17,7 @@ const AboutUs = () => {
 
       {/* HERO */}
       <section className="relative h-[90vh] flex items-center justify-center text-center">
-        <img src="/public/hero.jpg"
+        <img src="/hero.jpg"
           className="absolute w-full h-full object-cover"
           alt=""
         />
@@ -34,7 +34,7 @@ const AboutUs = () => {
 
       {/* ABOUT */}
       <section className="bg-green-700 text-white py-16 px-6 md:flex gap-10 items-center">
-        <img src="/public/About.jpg"
+        <img src="/About.jpg"
           className="rounded-xl md:w-1/2"
           alt=""
         />
@@ -61,7 +61,7 @@ const AboutUs = () => {
 
       {/* HOW IT WORKS */}
       <section className="relative py-20 text-center">
-        <img src="/public/delivery.jpg"
+        <img src="/delivery.jpg"
           className="absolute w-full h-full object-cover"
           alt=""
         />
@@ -89,9 +89,9 @@ const AboutUs = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { img: "/public/food1.jpg", price: "₹120" },
-            { img: "/public/food2.jpg", price: "₹150" },
-            { img: "/public/food3.jpg", price: "₹200" },
+            { img: "/food1.jpg", price: "₹120" },
+            { img: "/food2.jpg", price: "₹150" },
+            { img: "/food3.jpg", price: "₹200" },
           ].map((item, i) => (
             <div
               key={i}
@@ -106,7 +106,7 @@ const AboutUs = () => {
 
       {/* WHAT'S INSIDE */}
       <section className="py-16 px-6 md:flex gap-10 items-center">
-        <img src="/public/box.jpg"
+        <img src="/box.jpg"
           className="rounded-xl md:w-1/2"
           alt=""
         />
@@ -164,7 +164,7 @@ const AboutUs = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {["family.jpg", "vegan.jpg", "asian.jpg"].map((img, i) => (
             <div key={i} className="shadow rounded-xl overflow-hidden">
-              <img src={`/public/${img}`} className="h-56 w-full object-cover" />
+              <img src={`/${img}`} className="h-56 w-full object-cover" />
               <button className="m-4 bg-green-700 text-white px-4 py-2 rounded-full">
                 Explore
               </button>
@@ -175,7 +175,7 @@ const AboutUs = () => {
 
       {/* CONTACT */}
       <section className="relative py-20 text-center text-white">
-        <img src="/public/contact.jpg"
+        <img src="/contact.jpg"
           className="absolute w-full h-full object-cover"
           alt=""
         />
