@@ -41,7 +41,7 @@ const AboutUs = () => {
                   width: "100%",
                   height: "400px",
                   objectFit: "cover",
-                  borderRadius: "10px"
+                  borderRadius: "20px"
                 }} />
             </div>
 
