@@ -37,14 +37,16 @@ const AboutUs = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <img src="../about.jpg" className="img-fluid rounded" style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }} alt="" />
+              <img src="/about.jpg" className="img-fluid rounded" style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }} alt="" />
             </div>
  
             <div className="col-md-6 mt-4 mt-md-0">
               <h2>ABOUT</h2>
               <p>
-                At Go Food, we bring delicious meals from top kitchens straight
-                to your doorstep.
+                At Go Food, we believe everyone deserves a great meal.
+                We partner with the best local kitchens to bring fresh, 
+                delicious food straight to your doorstep — fast, affordable,
+                and always satisfying.
               </p>
 
               <ul className="list-unstyled">
