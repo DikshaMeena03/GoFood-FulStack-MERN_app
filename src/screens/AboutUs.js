@@ -37,12 +37,7 @@ const AboutUs = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <img src="/about-vegetable.jpg" className="img-fluid rounded" alt="" style={{
-                  width: "100%",
-                  height: "350px",
-                  objectFit: "cover",
-                  borderRadius: "10px"
-                }} />
+              <img src="/about-vegetable.jpg" className="img-fluid rounded" alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
 
             <div className="col-md-6 mt-4 mt-md-0">
