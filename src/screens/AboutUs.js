@@ -1,4 +1,5 @@
 import React from "react";
+import aboutImg from "../public/about-vegetables.jpg";
 import {
   Star,
   Leaf,
@@ -37,7 +38,8 @@ const AboutUs = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <img src="/about-vegetable.jpg" className="img-fluid rounded" style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }} alt="" />
+              <img 
+              src={aboutImg} className="img-fluid rounded" style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }} alt="" />
             </div>
  
             <div className="col-md-6 mt-4 mt-md-0">
