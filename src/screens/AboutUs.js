@@ -37,7 +37,7 @@ const AboutUs = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <img src="/about.jpg" className="img-fluid rounded" style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }} alt="" />
+              <img src="/about.jpg" className="img-fluid rounded" style={{ maxHeight: "300px", objectFit: "cover", width: "100%" }} alt="" />
             </div>
  
             <div className="col-md-6 mt-4 mt-md-0">
