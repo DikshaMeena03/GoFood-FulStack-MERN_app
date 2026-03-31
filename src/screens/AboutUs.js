@@ -159,9 +159,12 @@ const AboutUs = () => {
       </section>
 
       {/* REVIEWS */}
-      
-      <section style={{ backgroundColor: "#f5f5f5", padding: "80px 0" }}>
-        <div className="container text-center">
+
+      <section style={{
+        background: "linear-gradient(180deg, #f8f9fa 0%, #f1f3f5 100%)",
+        padding: "80px 0",
+      }}>
+        <div className="bg-light py-5 text-center">
 
           {/* Heading */}
           <p
