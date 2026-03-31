@@ -38,11 +38,11 @@ const AboutUs = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <img src="/about-vegetables.jpg" className="img-fluid rounded" alt="" style={{
-                  width: "100%",
-                  height: "400px",
-                  objectFit: "cover",
-                  borderRadius: "20px"
-                }} />
+                width: "100%",
+                height: "400px",
+                objectFit: "cover",
+                borderRadius: "20px"
+              }} />
             </div>
 
             <div className="col-md-6 mt-4 mt-md-0">
@@ -159,20 +159,94 @@ const AboutUs = () => {
       </section>
 
       {/* REVIEWS */}
-      <section className="bg-light py-5 text-center">
-        <div className="container">
-          <h2 className="mb-4">REVIEWS</h2>
+      
+      <section style={{ backgroundColor: "#f5f5f5", padding: "80px 0" }}>
+        <div className="container text-center">
 
+          {/* Heading */}
+          <p
+            style={{
+              color: "#1f7a4c",
+              letterSpacing: "3px",
+              fontWeight: "600",
+              fontSize: "12px",
+              marginBottom: "10px",
+            }}
+          >
+            TESTIMONIALS
+          </p>
+
+          <h2
+            style={{
+              fontSize: "42px",
+              fontWeight: "800",
+              marginBottom: "50px",
+            }}
+          >
+            REVIEWS
+          </h2>
+
+          {/* Cards */}
           <div className="row">
-            {[1, 2, 3].map((_, i) => (
-              <div className="col-md-4 mb-3" key={i}>
-                <div className="p-4 bg-white shadow rounded">
-                  <div className="mb-2">
+            {[
+              {
+                name: "Priya S.",
+                text: "Go Food changed the way I eat at home. The meals are restaurant-quality and always arrive hot!",
+                rating: 5,
+              },
+              {
+                name: "Rahul M.",
+                text: "Super fast delivery and the vegan options are incredible. Highly recommend the Buddha Bowl!",
+                rating: 5,
+              },
+              {
+                name: "Ananya K.",
+                text: "Affordable, fresh, and delicious. The butter chicken bowl is my weekly go-to. Love this service!",
+                rating: 4,
+              },
+            ].map((item, i) => (
+              <div className="col-md-4 mb-4" key={i}>
+                <div
+                  style={{
+                    background: "#fff",
+                    borderRadius: "15px",
+                    padding: "30px",
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
+                    height: "100%",
+                    transition: "transform 0.3s ease",
+                  }}
+                >
+
+                  {/* Stars */}
+                  <div className="d-flex justify-content-center mb-3">
                     {[...Array(5)].map((_, j) => (
-                      <Star key={j} size={16} />
+                      <Star
+                        key={j}
+                        size={18}
+                        style={{
+                          marginRight: "4px",
+                          color: j < item.rating ? "#1f7a4c" : "#ccc",
+                          fill: j < item.rating ? "#1f7a4c" : "none",
+                        }}
+                      />
                     ))}
                   </div>
-                  <p>"Amazing food and fast delivery!"</p>
+
+                  {/* Text */}
+                  <p
+                    style={{
+                      fontStyle: "italic",
+                      color: "#666",
+                      fontSize: "14px",
+                      lineHeight: "1.6",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    "{item.text}"
+                  </p>
+
+                  {/* Name */}
+                  <h6 style={{ fontWeight: "700" }}>{item.name}</h6>
                 </div>
               </div>
             ))}
