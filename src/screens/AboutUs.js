@@ -160,10 +160,7 @@ const AboutUs = () => {
 
       {/* REVIEWS */}
 
-      <section style={{
-        background: "linear-gradient(180deg, #f8f9fa 0%, #f1f3f5 100%)",
-        padding: "80px 0",
-      }}>
+      <section>
         <div className="bg-light py-5 text-center">
 
           {/* Heading */}
