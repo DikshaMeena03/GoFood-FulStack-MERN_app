@@ -18,13 +18,13 @@ router.post("/createuser",
             return res.status(400).json({ errors: errors.array() });
         }
         const salt = await bcrypt.genSalt(10);
-        let secPassword  = await bcrypt.hash(req.body.password, salt)
+        let secPassword = await bcrypt.hash(req.body.password, salt)
         try {
             await User.create({
                 name: req.body.name,
                 email: req.body.email,
                 password: secPassword,
-                location: req.body.geolocation
+                geolocation: req.body.geolocation
             })
             res.json({ success: true });
         }
@@ -34,7 +34,7 @@ router.post("/createuser",
         }
     })
 
-router.post("/loginuser",[
+router.post("/loginuser", [
     body('email', 'invalid email').isEmail(),
     body('password', 'invalid password').isLength({ min: 3 })],
     async (req, res) => {
@@ -44,31 +44,31 @@ router.post("/loginuser",[
             return res.status(400).json({ errors: errors.array() });
         }
 
-        let email = req.body.email;
+        let email = req.body.email.toLowerCase();
 
         try {
-            let userData = await User.findOne({email});
-            if (!userData){
+            let userData = await User.findOne({ email });
+            if (!userData) {
                 return res.status(400).json({ errors: "Try to SignUp Or Enter Correct Credential" });
             }
 
-             const pwdCompare = await bcrypt.compare(req.body.password, userData.password)
+            const pwdCompare = await bcrypt.compare(req.body.password, userData.password)
 
-            if(!pwdCompare){
+            if (!pwdCompare) {
                 return res.status(400).json({ errors: "Try to SignUp Or Enter Correct Credential" });
             }
             const data = {
-                user:{
-                    id:userData.id
+                user: {
+                    id: userData.id
                 }
             }
             const authToken = jwt.sign(data, jwtSecret)
-            return res.json({ success: true , authToken:authToken});
+            return res.json({ success: true, authToken: authToken });
         }
 
         catch (error) {
-            console.log(error);
-            res.json({ success: false });
+            console.log("ERROR:", error.message);
+            res.status(500).json({ success: false, error: error.message });
         }
     })
 

@@ -161,7 +161,7 @@ const AboutUs = () => {
       {/* REVIEWS */}
 
       <section>
-        <div className="bg-light py-5 text-center">
+        <div className="container text-center my-5">
 
           {/* Heading */}
           <p
